@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'gallery',
     'store',
     'about',
-    'contact'
+    'contact',
+    'social',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.processor.ctx_dict',
             ],
         },
     },
@@ -133,3 +136,24 @@ MEDIA_ROOT=os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+#configurar ckeditpor
+
+CKEDITOR_CONFIGS = { 
+
+    'default': { 
+
+        'toolbar': None, 
+
+    } 
+
+} 
+
+
+#ENVÍO DE EMAIL
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '4aa6b1c5d31d66'
+EMAIL_HOST_PASSWORD = '07623a761746d7'
+EMAIL_PORT = '2525'
